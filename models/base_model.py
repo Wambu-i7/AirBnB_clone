@@ -27,12 +27,8 @@ class BaseModel:
 
     def to_dict(self) -> dict:
         """Return a dictionary of instance attributes."""
-        excluded = ['name', 'my_number']
-        result = {k: v for k, v in self.__dict__.items() if k not in excluded}
-        result['__class__'] = self.__class__.__name__
-
-        for k, v in result.items():
-            if isinstance(v, datetime):
-                result[k] = v.isoformat()
-
-        return result
+        obj_dict = self.__dict__.copy()
+        obj_dict['__class__'] = type(self).__name__
+        obj_dict['created_at'] = self.created_at.isoformat()
+        obj_dict['updated_at'] = self.updated_at.isoformat()
+        return obj_dict
