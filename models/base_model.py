@@ -10,7 +10,7 @@ class BaseModel:
     """
     TIME_FORMAT = "%Y-%m-%dT%H:%M:%S.%f"
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self):
         """Initialize a new instance of BaseModel."""
         self.id = str(uuid.uuid4())
         self.created_at = datetime.now()
