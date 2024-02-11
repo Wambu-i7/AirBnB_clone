@@ -14,22 +14,20 @@ import cmd
 class HBNBCommand(cmd.Cmd):
     """This class is the Base class that inherits from the Cmd class."""
     prompt = "(hbnb)"
-    def __init__(self):
-        """Initializing using the magic method"""
-        super().__init__()
 
     def do_quit(self, line):
         """This method exits the Command line loop"""
         return True
     def do_EOF(self, line):
-        print()
         """Exits the command interpreter"""
+        print()
         return True
-    def help(self):
-        """Displays documentation of the commands and the commands"""
-        return True
+    def help_quit(self):
+        """Help message fo rthe quit command"""
+        print("Quit command to exit the program\n")
     def emptyline(self):
         """Returns an empty line when enter is pressed"""
+        pass
 
 
 
