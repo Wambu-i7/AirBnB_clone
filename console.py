@@ -220,14 +220,8 @@ class HBNBCommand(cmd.Cmd):
 
         obj = storage.all()[key]
 
-        # Store the previous updated_at value
-        # prev_updated_at = obj.updated_at
-
-        # Simplify attribute handling (without explicit checks)
         setattr(obj, attribute, value)
 
-        # Always update the updated_at attribute
-        # obj.updated_at = datetime.now().strftime('%Y-%m-%dT%H:%M:%S.%f')
         storage.all()[key].save()
 
 
