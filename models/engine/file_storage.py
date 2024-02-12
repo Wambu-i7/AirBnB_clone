@@ -7,7 +7,7 @@ deserialization of files and objects
 import json
 from os import path
 from models.base_model import BaseModel
-#from models.user import User
+from models.user import User
 #from models.state import State
 #from models.city import City
 #from models.amenity import Amenity
@@ -20,6 +20,11 @@ class FileStorage:
     __file_path: String- path to JSON file.
     __objects: dictionary(empty) later storing objects.
     """
+
+    CLASSES = {
+        'BaseModel': BaseModel,
+        'User': User
+        }
 
     __file_path = "file.json"
     __objects = {}
